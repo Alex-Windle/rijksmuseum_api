@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 
 import App from './components/app';
+import SearchBar from './components/search-bar'; 
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
