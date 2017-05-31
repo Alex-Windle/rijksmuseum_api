@@ -65,7 +65,7 @@ export default class App extends Component {
 		  <div>
 		  	Museum App
 		  	<SearchBar onSearchTermChange={term => this.searchArtwork(term)} />
-		  	<Results />
+		  	<Results artworks={this.state.artworks} />
 		  </div>
 		);
 	}
