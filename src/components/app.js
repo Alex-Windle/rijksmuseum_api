@@ -35,13 +35,23 @@ import SearchBar from './search-bar';
 // 	}); 
 
 export default class App extends Component {
+	searchArtwork(term) {
+		let endpoint = "https://www.rijksmuseum.nl/api/en/collection?key=cbUNdwH5&q=" + term + "&ps=100&imgonly=True&toppieces=True"; 
+		
+		fetch(endpoint)
+			.then(function(response) {
+				return response.json(); 
+			}).then(function(obj) {
+				console.log(obj);
+			})
+	}
 
-  render() {
-    return (
-      <div>
-      	Museum App
-      	<SearchBar onSearchTermChange={term => console.log("Prop successful: ", term)} />
-      </div>
-    );
-  }
+	render() {
+		return (
+		  <div>
+		  	Museum App
+		  	<SearchBar onSearchTermChange={term => this.searchArtwork(term)} />
+		  </div>
+		);
+	}
 }
