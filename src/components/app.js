@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import $ from 'jquery'; 
 
-import SearchBar from './search-bar'; 
+import SearchBar from './search-bar';
+import Results from './results';  
 
 // (1) fetch data
 // fetch("https://www.rijksmuseum.nl/api/en/collection/sk-c-5?key=cbUNdwH5")
@@ -35,22 +36,36 @@ import SearchBar from './search-bar';
 // 	}); 
 
 export default class App extends Component {
+	// state holds list of artworks
+	constructor() {
+		super(); 
+		this.state = {artworks: []}; 
+
+		this.searchArtwork = this.searchArtwork.bind(this);
+	}
+
 	searchArtwork(term) {
-		let endpoint = "https://www.rijksmuseum.nl/api/en/collection?key=cbUNdwH5&q=" + term + "&ps=100&imgonly=True&toppieces=True"; 
+		let endpoint = "https://www.rijksmuseum.nl/api/en/collection?key=cbUNdwH5&q=" + term;   
 		
-		fetch(endpoint)
-			.then(function(response) {
-				return response.json(); 
-			}).then(function(obj) {
-				console.log(obj);
-			})
+		$.ajax({
+			url: endpoint,
+			type: 'GET' 
+		}).then(function(obj) { 
+			return obj.artObjects; 
+		}).then(array => this.updateState(array)); 
+	}
+
+	updateState(artworks) {
+		this.setState({artworks: artworks}); 
 	}
 
 	render() {
+		console.log(this.state.artworks);
 		return (
 		  <div>
 		  	Museum App
 		  	<SearchBar onSearchTermChange={term => this.searchArtwork(term)} />
+		  	<Results />
 		  </div>
 		);
 	}
