@@ -15,12 +15,12 @@ import SearchBar from './search-bar';
 // 		console.log("Image: ", obj.artObject.webImage.url);
 // 	}); 
 
-fetch("https://www.rijksmuseum.nl/api/en/collection?key=cbUNdwH5&q=rembrandt&ps=100&imgonly=True&toppieces=True")
-	.then(function(response) {
-		return response.json(); 
-	}).then(function(obj) { 
-		console.log(obj);
-	}); 
+// fetch("https://www.rijksmuseum.nl/api/en/collection?key=cbUNdwH5&q=rembrandt&ps=100&imgonly=True&toppieces=True")
+// 	.then(function(response) {
+// 		return response.json(); 
+// 	}).then(function(obj) { 
+// 		console.log(obj);
+// 	}); 
 
 // (2) ajax call 
 // $.ajax({
@@ -40,7 +40,7 @@ export default class App extends Component {
     return (
       <div>
       	Museum App
-      	<SearchBar />
+      	<SearchBar onSearchTermChange={term => console.log("Prop successful: ", term)} />
       </div>
     );
   }
