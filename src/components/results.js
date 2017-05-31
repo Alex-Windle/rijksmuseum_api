@@ -1,21 +1,17 @@
-import React, {Component} from 'react'; 
+import React from 'react'; 
 
-class Results extends Component {
-	renderList() {
-		return(<li>Hello world!</li>);
-	}
+const Results = function(props) {
+	console.log(props.artworks);
 	
-	render() {
-		console.log(this.props.artworks);
-		return (
-			<div>
-				Results
-				<ul>
-					{this.renderList()}
-				</ul>
-			</div>
-		); 
-	}
+	const artworkList = props.artworks.map(function(artwork) {
+		return (<li>{artwork.title}</li>);
+	})
+
+	return (
+		<div>
+			Results
+			<ul>{artworkList}</ul>
+		</div>);
 }
 
 export default Results;
