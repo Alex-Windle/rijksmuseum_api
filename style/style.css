@@ -1,0 +1,25 @@
+ul{
+	display: flex;
+	flex-direction: row; 
+	flex-wrap: wrap; 
+}
+li{
+	font-size: 14px;
+	list-style: none;
+	height: 210px;
+	width: 210px;
+	border: 2px solid gray;
+	margin: 10px;
+	padding: 5px;
+	overflow: hidden;
+}
+.img-wrapper{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+img{
+	max-height: 130px;
+	max-width: 130px;
+	text-align: center;
+}
