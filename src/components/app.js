@@ -45,7 +45,11 @@ export default class App extends Component {
 	}
 
 	searchArtwork(term) {
-		let endpoint = "https://www.rijksmuseum.nl/api/en/collection?key=cbUNdwH5&q=" + term;   
+		let endpoint = "https://www.rijksmuseum.nl/api/en/collection?" + 
+		"key=cbUNdwH5" + 
+		"&q=" + term +
+		"&imgonly=True" + 
+		"&toppieces=True";   
 		
 		$.ajax({
 			url: endpoint,
