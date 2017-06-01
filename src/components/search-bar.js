@@ -3,20 +3,10 @@ import React, { Component } from 'react';
 class SearchBar extends Component {
 	constructor(props) {
 		super(props); 
-		this.state = {
-			term: '',
-			popularSearches: ['Dummy search a', 'Dummy search b']
-		};
+		this.state = {term: ''};
 	} 
 
 	render(){
-		// Problem: Refactor code to include clickHandler.
-		const popularSearchesList = this.state.popularSearches.map(function(search) {
-			return (
-				<li key={search}>{search}</li>
-			);
-		}); 
-
 		return (
 			<div>
 				<p>
@@ -32,7 +22,6 @@ class SearchBar extends Component {
 				<div className="popular-searches-wrapper">
 					<p>Popular searches</p>
 					<ul className="popular-searches">
-						{popularSearchesList}
 						<li onClick={this.clickHandler.bind(this)}>Rembrandt</li>
 						<li onClick={this.clickHandler.bind(this)}>Vermeer</li>
 						<li onClick={this.clickHandler.bind(this)}>Franz Hals</li>
@@ -45,6 +34,8 @@ class SearchBar extends Component {
 						<li onClick={this.clickHandler.bind(this)}>Nativity</li>
 						<li onClick={this.clickHandler.bind(this)}>Mary and Joseph</li>
 						<li onClick={this.clickHandler.bind(this)}>Resurrection</li>
+						<li onClick={this.clickHandler.bind(this)}>Charles V</li>
+						<li onClick={this.clickHandler.bind(this)}>Louis Napoleon</li>
 						<li onClick={this.clickHandler.bind(this)}>Dutch porcelain</li>
 					</ul>
 				</div>	
