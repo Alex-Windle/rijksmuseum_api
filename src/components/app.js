@@ -64,7 +64,6 @@ export default class App extends Component {
 	}
 
 	render() {
-		console.log(this.state.artworks);
 		return (
 		  <div>
 		  	<strong>Rijksmuseum App</strong><br/><br/>

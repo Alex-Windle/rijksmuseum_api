@@ -13,10 +13,9 @@ const Results = function(props) {
 		);
 	})
 
-	console.log(props);
 	return (
 		<div>
-			<em>Results</em>
+			{ props.artworks.length > 0 ? <em>Results</em> : ' '}
 			<ul className="artwork-list">{artworkList}</ul>
 		</div>);
 }

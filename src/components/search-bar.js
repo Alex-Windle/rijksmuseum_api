@@ -7,7 +7,6 @@ class SearchBar extends Component {
 	} 
 
 	render(){
-		console.log(this.state.term);
 		return (
 			<div>
 				<p>
