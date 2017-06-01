@@ -2,7 +2,7 @@
 
 The objective of this exercise is to practice front end fundamentals, including:
 
-* Ajax calls to Rijksmuseum API
+* Ajax calls to a public API
 * ReactJS state and props
 
 ![alt text](rijks_screenshot.png)
