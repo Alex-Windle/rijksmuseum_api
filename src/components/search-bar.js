@@ -13,6 +13,7 @@ class SearchBar extends Component {
 					<strong>Search</strong> over 500,000 works archived in the Dutch national museum.<br/>
 					<span className="small-text">Enter an artist, subject or medium.</span><br/>
 					<input
+						className="search-input"
 						type="text"
 						value={this.state.term}
 						onChange={event => this.onInputChange(event.target.value)}
