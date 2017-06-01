@@ -6,19 +6,18 @@ const Results = function(props) {
 	const artworkList = props.artworks.map(function(artwork) {
 		return (
 			<li>
-				<strong>Title:</strong><em> {artwork.title}</em><br/>
-				<strong>Artist:</strong> {artwork.principalOrFirstMaker}<br/><br/>
-				<div className="img-wrapper">
-					<img src={artwork.webImage.url} alt="No image available." />
-				</div>
+				<div className="img-wrapper"><img src={artwork.webImage.url} alt="No image available." /></div>
+				<em>{artwork.title}</em><br/>
+				{artwork.principalOrFirstMaker}
 			</li>
 		);
 	})
 
+	console.log(props);
 	return (
 		<div>
-			Results
-			<ul>{artworkList}</ul>
+			<em>Results</em>
+			<ul className="artwork-list">{artworkList}</ul>
 		</div>);
 }
 

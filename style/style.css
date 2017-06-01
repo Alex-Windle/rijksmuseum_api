@@ -1,25 +1,49 @@
-ul{
+.small-text{
+	font-size: 12.2px;
+}
+.artwork-list{
 	display: flex;
 	flex-direction: row; 
 	flex-wrap: wrap; 
 }
-li{
-	font-size: 14px;
+.artwork-list li{
+	display: block; 
+	font-size: 13px;
 	list-style: none;
-	height: 210px;
-	width: 210px;
-	border: 2px solid gray;
-	margin: 10px;
-	padding: 5px;
+	height: 240px;
+	width: 175px;
+	margin: 15px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 	overflow: hidden;
 }
 .img-wrapper{
-	display: flex;
+	display: flex; 
 	flex-direction: column;
 	align-items: center;
 }
 img{
-	max-height: 130px;
-	max-width: 130px;
+	max-height: 175px;
+	max-width: 190px;
 	text-align: center;
+}
+.popular-searches{
+	list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+}
+.popular-searches li {
+	color: #1e3e99;
+	margin: 5px 25px 5px 0; 
+	font-size: 14px; 
+	letter-spacing: .1px; 
+	font-style: italic;
+}
+.popular-searches li:hover {
+	text-decoration: underline; 
+	font-size: 14.3px;
 }
