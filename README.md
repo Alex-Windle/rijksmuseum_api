@@ -6,7 +6,6 @@ The objective of this exercise is to practice front end fundamentals, including:
 
 * Ajax calls to a public API
 * ReactJS state and props
-* Redux state management
 
 ### Getting Started
 
