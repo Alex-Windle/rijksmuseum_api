@@ -48,12 +48,8 @@ class SearchBar extends Component {
 		this.props.onSearchTermChange(searchWord); 
 	}
 
-	// handle popular searches click -> input search term
 	clickHandler(event) {
-		// set state
 		this.setState({term: event.currentTarget.innerHTML});
-
-		// pass props
 		this.props.onSearchTermChange(event.currentTarget.innerHTML);
 	}
 }
