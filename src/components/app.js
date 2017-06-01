@@ -35,7 +35,7 @@ export default class App extends Component {
 		return (
 		  <div>
 		  	<strong>Rijksmuseum App</strong><br/><br/>
-		  	<SearchBar onSearchTermChange={term => this.searchArtwork(term)} />
+		  	<SearchBar onSearchTermChange={term => this.searchArtwork(term)} /><br/><br/>
 		  	<Results artworks={this.state.artworks} /><br/><br/>
 		  </div>
 		);
