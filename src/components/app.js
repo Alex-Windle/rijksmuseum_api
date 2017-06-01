@@ -34,9 +34,13 @@ export default class App extends Component {
 	render() {
 		return (
 		  <div>
-		  	<strong>Rijksmuseum App</strong><br/><br/>
-		  	<SearchBar onSearchTermChange={term => this.searchArtwork(term)} /><br/><br/>
-		  	<Results artworks={this.state.artworks} /><br/><br/>
+		  	<br/>
+		  	<h3><strong>Rijksmuseum App</strong></h3>
+		  	<br/>
+		  	<SearchBar onSearchTermChange={term => this.searchArtwork(term)} />
+		  	<br/><br/>
+		  	<Results artworks={this.state.artworks} />
+		  	<br/><br/>
 		  </div>
 		);
 	}
