@@ -7,6 +7,7 @@ class SearchBar extends Component {
 	} 
 
 	render(){
+		console.log(this.state.term);
 		return (
 			<div>
 				<p>
@@ -20,19 +21,20 @@ class SearchBar extends Component {
 				</p>
 				<p>Popular searches:</p>
 				<ul className="popular-searches">
-					<li>Rembrandt</li>
-					<li>Vermeer</li>
-					<li>Francisco Goya</li>
-					<li>Franz Hals</li>
-					<li>The Night Watch</li>
-					<li>The Milkmaid</li>
-					<li>Battle of Waterloo</li>
-					<li>Girl in a Blue Dress</li>
-					<li>Merry Drinker</li>
-					<li>Nativity</li>
-					<li>Mary and Joseph</li>
-					<li>Resurrection</li>
-					<li>Dutch porcelain</li>
+					<li onClick={this.clickHandler.bind(this)}>Rembrandt</li>
+					<li onClick={this.clickHandler.bind(this)}>Vermeer</li>
+					<li onClick={this.clickHandler.bind(this)}>Franz Hals</li>
+					<li onClick={this.clickHandler.bind(this)}>Francisco de Goya</li>
+					<li onClick={this.clickHandler.bind(this)}>Franz Hals</li>
+					<li onClick={this.clickHandler.bind(this)}>The Night Watch</li>
+					<li onClick={this.clickHandler.bind(this)}>The Milkmaid</li>
+					<li onClick={this.clickHandler.bind(this)}>Battle of Waterloo</li>
+					<li onClick={this.clickHandler.bind(this)}>Girl in a Blue Dress</li>
+					<li onClick={this.clickHandler.bind(this)}>Merry Drinker</li>
+					<li onClick={this.clickHandler.bind(this)}>Nativity</li>
+					<li onClick={this.clickHandler.bind(this)}>Mary and Joseph</li>
+					<li onClick={this.clickHandler.bind(this)}>Resurrection</li>
+					<li onClick={this.clickHandler.bind(this)}>Dutch porcelain</li>
 
 				</ul>	
 			</div>
@@ -45,6 +47,15 @@ class SearchBar extends Component {
 
 		// pass props up to parent component for API call 
 		this.props.onSearchTermChange(searchWord); 
+	}
+
+	// handle popular searches click -> input search term
+	clickHandler(event) {
+		// set state
+		this.setState({term: event.currentTarget.innerHTML});
+
+		// pass props
+		this.props.onSearchTermChange(event.currentTarget.innerHTML);
 	}
 }
 
