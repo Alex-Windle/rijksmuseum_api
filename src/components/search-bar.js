@@ -5,7 +5,7 @@ class SearchBar extends Component {
 		super(props); 
 		this.state = {
 			term: '',
-			popularSearches: ['Dummy search', 'Dummy search']
+			popularSearches: ['Dummy search a', 'Dummy search b']
 		};
 	} 
 
@@ -13,7 +13,7 @@ class SearchBar extends Component {
 		// Problem: Refactor code to include clickHandler.
 		const popularSearchesList = this.state.popularSearches.map(function(search) {
 			return (
-				<li>{search}</li>
+				<li key={search}>{search}</li>
 			);
 		}); 
 
