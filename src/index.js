@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 
-import App from './components/app';
-import SearchBar from './components/search-bar'; 
+import App from './components/app.jsx';
+import SearchBar from './components/search-bar.jsx'; 
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);

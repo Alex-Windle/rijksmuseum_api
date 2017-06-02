@@ -1,5 +1,5 @@
 import React, { Component } from 'react'; 
-import PopularSearches from '../data.js';
+import PopularSearches from '../data_popular_searches.js';
 
 class SearchBar extends Component {
 	constructor(props) {
@@ -9,9 +9,8 @@ class SearchBar extends Component {
 
 	renderButton () {
 		return PopularSearches.map(item => {
-				return(<li key={item} onClick={this.clickHandler.bind(this)}>{item}</li>);
-			}); 
-
+			return(<li key={item} onClick={this.clickHandler.bind(this)}>{item}</li>);
+		}); 
 	}
 
 	render(){
