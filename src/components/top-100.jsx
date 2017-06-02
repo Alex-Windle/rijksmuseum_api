@@ -8,7 +8,7 @@ class Top100 extends Component {
 		super(); 
 		this.state = {
 			top100: [],
-			artDetail: {}
+			artDetail: []
 		}; 
 
 		this.updateState = this.updateState.bind(this);
@@ -45,6 +45,7 @@ class Top100 extends Component {
 		let url = "https://www.rijksmuseum.nl/api/en/collection?" + 
 		"key=cbUNdwH5" + 
 		"&q=" + event.currentTarget.innerHTML +
+		"&ps=1" +
 		"&imgonly=True" + 
 		"&toppieces=True";   
 		
@@ -54,8 +55,6 @@ class Top100 extends Component {
 		}).then(function(obj) { 
 			return obj.artObjects; 
 		}).then(array => this.updateStateArtDetail(array));
-
-		// Pass props to DetailView component
 	}
 
 	render() {
