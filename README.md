@@ -1,11 +1,12 @@
 # Rijksmuseum App
 
+Proof of concept for Belgard Products Pages:
+
+* Pulling in large amounts of data
+* Sorting and displaying data by keyword
+* Showing a detail view of items
+
 ![alt text](rijks_screenshot.png)
-
-The objective of this exercise is to practice front end fundamentals, including:
-
-* Ajax calls to a public API
-* ReactJS state and props
 
 ### Getting Started
 
