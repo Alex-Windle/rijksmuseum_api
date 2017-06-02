@@ -91,3 +91,59 @@ li.no-results{
 	margin: 5px 0 0 0;
 	color: dimgray;
 }
+.top100-detail-wrapper{
+	display: flex;
+	flex-direction: row;
+}
+.top100-detail-wrapper ul{
+	padding: 0;
+	list-style: none;
+	background: gainsboro;
+	width: 60%;
+}
+.top100-detail-wrapper ul li{
+	font: lightgray;
+	margin: 5px 5px;
+	padding: 3px;
+}
+.top100-detail-wrapper ul li:hover{
+	background: white;
+}
+.top100-detail-wrapper .detail-view{
+	width: 40%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

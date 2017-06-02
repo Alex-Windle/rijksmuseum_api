@@ -62,12 +62,16 @@ class Top100 extends Component {
 		return (
 			<div>
 				<strong>Explore</strong> top artworks housed in the museum.
-				<ul>
-					{this.state.top100.map(artwork => 
-						<li key={artwork.id} onClick={this.showDetail}>{artwork.title}</li>
-					)}
-				</ul>
-				<DetailView detail={this.state.artDetail} />
+				<div className="top100-detail-wrapper">
+					<ul className="top100-list">
+						{this.state.top100.map(artwork => 
+							<li key={artwork.id} onClick={this.showDetail}>{artwork.title}</li>
+						)}
+					</ul>
+					<div className="detail-view">
+						<DetailView detail={this.state.artDetail} />
+					</div>
+				</div>
 			</div>
 		);
 	}	
