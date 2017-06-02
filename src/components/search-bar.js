@@ -1,4 +1,5 @@
 import React, { Component } from 'react'; 
+import PopularSearches from '../data.js';
 
 class SearchBar extends Component {
 	constructor(props) {
@@ -6,7 +7,20 @@ class SearchBar extends Component {
 		this.state = {term: ''};
 	} 
 
+	renderButton () {
+		return PopularSearches.map(item => {
+				return(<li key={item} onClick={this.clickHandler.bind(this)}>{item}</li>);
+			}); 
+
+	}
+
 	render(){
+		// const boopButton = this.state.boopTerm.map(function(item){
+		// 	return (<li onClick={this.clickHandler}>{item}</li>);
+		// })
+
+		// const boopButton = (<li onClick={this.clickHandler.bind(this)}>Boop</li>);
+
 		return (
 			<div>
 				<p>
@@ -22,21 +36,7 @@ class SearchBar extends Component {
 				<div className="popular-searches-wrapper">
 					<p>Popular searches</p>
 					<ul className="popular-searches">
-						<li onClick={this.clickHandler.bind(this)}>Rembrandt</li>
-						<li onClick={this.clickHandler.bind(this)}>Vermeer</li>
-						<li onClick={this.clickHandler.bind(this)}>Franz Hals</li>
-						<li onClick={this.clickHandler.bind(this)}>Francisco de Goya</li>
-						<li onClick={this.clickHandler.bind(this)}>The Night Watch</li>
-						<li onClick={this.clickHandler.bind(this)}>The Milkmaid</li>
-						<li onClick={this.clickHandler.bind(this)}>Battle of Waterloo</li>
-						<li onClick={this.clickHandler.bind(this)}>Girl in a Blue Dress</li>
-						<li onClick={this.clickHandler.bind(this)}>Merry Drinker</li>
-						<li onClick={this.clickHandler.bind(this)}>Nativity</li>
-						<li onClick={this.clickHandler.bind(this)}>Mary and Joseph</li>
-						<li onClick={this.clickHandler.bind(this)}>Resurrection</li>
-						<li onClick={this.clickHandler.bind(this)}>Charles V</li>
-						<li onClick={this.clickHandler.bind(this)}>Louis Napoleon</li>
-						<li onClick={this.clickHandler.bind(this)}>Dutch porcelain</li>
+						{this.renderButton()}
 					</ul>
 				</div>	
 			</div>
