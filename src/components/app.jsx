@@ -12,10 +12,13 @@ export default class App extends Component {
 			top100: [],
 			artworks: []
 		}; 
-
+		
 		this.searchArtwork = this.searchArtwork.bind(this);
 		this.getTop100 = this.getTop100.bind(this);
-		//this.updateStateTop100 = this.updateStateTop100.bind(this);
+	}
+
+	componentWillMount() {
+		this.getTop100();
 	}
 
 	getTop100() {
@@ -31,8 +34,13 @@ export default class App extends Component {
 		}).then(function(obj) {
 			return obj.artObjects;
 		}).then(function(array) {
-			//this.updateStateTop100();
-		});
+			// Uncaught ReferenceError: updateStateTop100 is not defined
+			// updateStateTop100(arr);
+
+			// Uncaught TypeError: this.updateStateTop100 is not a function
+			// this.updateStateTop100(array);
+			return array;
+		}).then(array => this.updateStateTop100(array));
 	}
 
 	searchArtwork(term) {
@@ -42,19 +50,19 @@ export default class App extends Component {
 		"&imgonly=True" + 
 		"&toppieces=True";   
 		
+		// How does the arrow function preserve the context of "this"?
 		$.ajax({
 			url: endpoint,
 			type: 'GET' 
 		}).then(function(obj) { 
 			return obj.artObjects; 
 		}).then(array => this.updateState(array));
-
-		// how does the arrow function preserve the context of "this"?
 	}
 
-	// this.updateStateTop100() {
-	// 	console.log("top100 function runs");
-	// }
+	updateStateTop100(top100) {
+		console.log("updateStateTop100() runs");
+		this.setState({top100: top100});
+	}
 
 	updateState(artworks) {
 		this.setState({artworks: artworks}); 
@@ -62,7 +70,7 @@ export default class App extends Component {
 
 	render() {
 		
-		this.getTop100();
+		console.log("this.state.top100", this.state.top100);
 
 		return (
 		  <div>

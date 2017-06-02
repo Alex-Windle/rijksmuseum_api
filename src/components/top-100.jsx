@@ -3,7 +3,7 @@ import React from 'react';
 const Top100 = function(){
 	
 	function renderTop100() {
-		console.log('test');
+		return "renderTop100 runs";
 	}
 
 	return (
