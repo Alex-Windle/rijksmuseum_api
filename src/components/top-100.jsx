@@ -1,20 +1,76 @@
-import React from 'react'; 
+import React, {Component} from 'react'; 
+import $ from 'jquery'; 
 
-const Top100 = function(){
+import DetailView from './detail-view.jsx';
+
+class Top100 extends Component {
+	constructor() {
+		super(); 
+		this.state = {
+			top100: [],
+			artDetail: {}
+		}; 
+
+		this.updateState = this.updateState.bind(this);
+		this.showDetail = this.showDetail.bind(this);
+	}
 	
-	function renderTop100() {
-		return "renderTop100 runs";
+	componentWillMount() {
+		const url = "https://www.rijksmuseum.nl/api/en/collection/" +
+		"?key=cbUNdwH5" + 
+		"&ps=20" +
+		"&imgonly=True" + 
+		"&toppieces=True"; 
+
+		$.ajax({
+			url: url,
+			type: 'GET'
+		}).then(function(obj) {
+			return obj.artObjects;
+		}).then(array => this.updateState(array));
 	}
 
-	return (
-		<div>
-			<strong>Explore</strong> top artworks housed in the museum.
-			<ul>
-				{renderTop100()}
-			</ul>
-		</div>
-	);
-}
+	updateState(top100) {
+		this.setState({top100: top100});
+	}
 
+	updateStateArtDetail(artDetail) {
+		this.setState({artDetail: artDetail})
+	}
+
+	showDetail(event) {
+		// AJAX call to API (search by title)
+		// Set state with artwork
+
+		let url = "https://www.rijksmuseum.nl/api/en/collection?" + 
+		"key=cbUNdwH5" + 
+		"&q=" + event.currentTarget.innerHTML +
+		"&imgonly=True" + 
+		"&toppieces=True";   
+		
+		$.ajax({
+			url: url,
+			type: 'GET' 
+		}).then(function(obj) { 
+			return obj.artObjects; 
+		}).then(array => this.updateStateArtDetail(array));
+
+		// Pass props to DetailView component
+	}
+
+	render() {
+		return (
+			<div>
+				<strong>Explore</strong> top artworks housed in the museum.
+				<ul>
+					{this.state.top100.map(artwork => 
+						<li key={artwork.id} onClick={this.showDetail}>{artwork.title}</li>
+					)}
+				</ul>
+				<DetailView detail={this.state.artDetail} />
+			</div>
+		);
+	}	
+}
 
 export default Top100;
