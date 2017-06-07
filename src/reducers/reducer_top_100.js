@@ -28,8 +28,11 @@ export default function() {
 
 	// return a data object to populate state
 
-	return [
-		{title: "Artwork 1"}, 
-		{title: "Artwork 2"}
-	]
+	// return [
+	// 	{title: "Artwork 1"}, 
+	// 	{title: "Artwork 2"}
+	// ]
+	return (
+		
+	);
 }
