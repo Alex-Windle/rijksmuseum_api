@@ -64,9 +64,6 @@ class Top100 extends Component {
 				<div className="top100-detail-wrapper">
 					<ul className="top100-list">
 						{console.log(this.props.top100)}
-						{this.props.top100.map((item) => {
-							return <li key={item.thing}>{item.thing}</li>
-						})}
 					</ul>
 					<div className="detail-view">
 					</div>

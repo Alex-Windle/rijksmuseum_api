@@ -2,25 +2,34 @@ import $ from 'jquery';
 
 export default function() {
 	// fetch data from API
-	// const url = "https://www.rijksmuseum.nl/api/en/collection/" +
-	// 	"?key=cbUNdwH5" + 
-	// 	"&ps=20" +
-	// 	"&imgonly=True" + 
-	// 	"&toppieces=True"; 
+	let data;
 
-	// 	$.ajax({
+	const url = "https://www.rijksmuseum.nl/api/en/collection/" +
+		"?key=cbUNdwH5" + 
+		"&ps=20" +
+		"&imgonly=True" + 
+		"&toppieces=True"; 
+
+	// $.ajax({
 	// 		url: url,
 	// 		type: 'GET'
 	// 	}).then(function(obj) {
-	// 		return obj.artObjects;
-	// 	}).then(array => {
-	// 		console.log("Ajax runs...");
-	// 		return array;
-	// 	});
+	// 		let ajaxCall; 
+	// 		ajaxCall = [...obj.artObjects];
+	// 		return ajaxCall;
+	// 	}).then(function(ajaxCall) {
+	// 		// save to data variable
+	// 		data = [...ajaxCall]; 
+	// 	}).then(function() {
+	// 		// grab data variable
+	// 		console.log("Data variable to return: ", data);
+	// 		return data;
+	// 	})
 
 	// return a data object to populate state
+
 	return [
-		{thing: "thing"}, 
-		{thing: "thing2"}
+		{title: "Artwork 1"}, 
+		{title: "Artwork 2"}
 	]
 }
