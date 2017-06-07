@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import $ from 'jquery'; 
 
-import Top100 from './top-100.jsx';
+import Top100 from '../containers/top-100.jsx';
 import SearchBar from './search-bar.jsx';
 import Results from './results.jsx';  
 
