@@ -7,55 +7,55 @@ class Top100 extends Component {
 	constructor() {
 		super(); 
 		this.state = {
-			top100: [],
-			artDetail: []
+			// top100: [],
+			// artDetail: []
 		}; 
 
-		this.updateState = this.updateState.bind(this);
-		this.showDetail = this.showDetail.bind(this);
+		// this.updateState = this.updateState.bind(this);
+		// this.showDetail = this.showDetail.bind(this);
 	}
 	
-	componentWillMount() {
-		const url = "https://www.rijksmuseum.nl/api/en/collection/" +
-		"?key=cbUNdwH5" + 
-		"&ps=20" +
-		"&imgonly=True" + 
-		"&toppieces=True"; 
+	// componentWillMount() {
+		// const url = "https://www.rijksmuseum.nl/api/en/collection/" +
+		// "?key=cbUNdwH5" + 
+		// "&ps=20" +
+		// "&imgonly=True" + 
+		// "&toppieces=True"; 
 
-		$.ajax({
-			url: url,
-			type: 'GET'
-		}).then(function(obj) {
-			return obj.artObjects;
-		}).then(array => this.updateState(array));
-	}
+		// $.ajax({
+		// 	url: url,
+		// 	type: 'GET'
+		// }).then(function(obj) {
+		// 	return obj.artObjects;
+		// }).then(array => this.updateState(array));
+	// }
 
-	updateState(top100) {
-		this.setState({top100: top100});
-	}
+	// updateState(top100) {
+	// 	this.setState({top100: top100});
+	// }
 
-	updateStateArtDetail(artDetail) {
-		this.setState({artDetail: artDetail})
-	}
+	// updateStateArtDetail(artDetail) {
+	// 	this.setState({artDetail: artDetail})
+	// }
 
-	showDetail(event) {
-		// AJAX call to API (search by title)
-		// Set state with artwork
+	// showDetail(event) {
+	// 	// AJAX call to API (search by title)
+	// 	// Set state with artwork
 
-		let url = "https://www.rijksmuseum.nl/api/en/collection?" + 
-		"key=cbUNdwH5" + 
-		"&q=" + event.currentTarget.innerHTML +
-		"&ps=1" +
-		"&imgonly=True" + 
-		"&toppieces=True";   
+	// 	let url = "https://www.rijksmuseum.nl/api/en/collection?" + 
+	// 	"key=cbUNdwH5" + 
+	// 	"&q=" + event.currentTarget.innerHTML +
+	// 	"&ps=1" +
+	// 	"&imgonly=True" + 
+	// 	"&toppieces=True";   
 		
-		$.ajax({
-			url: url,
-			type: 'GET' 
-		}).then(function(obj) { 
-			return obj.artObjects; 
-		}).then(array => this.updateStateArtDetail(array));
-	}
+	// 	$.ajax({
+	// 		url: url,
+	// 		type: 'GET' 
+	// 	}).then(function(obj) { 
+	// 		return obj.artObjects; 
+	// 	}).then(array => this.updateStateArtDetail(array));
+	// }
 
 	render() {
 		return (
@@ -63,17 +63,21 @@ class Top100 extends Component {
 				<strong>Explore</strong> top artworks housed in the museum.
 				<div className="top100-detail-wrapper">
 					<ul className="top100-list">
-						{this.state.top100.map(artwork => 
-							<li key={artwork.id} onClick={this.showDetail}>{artwork.title}</li>
-						)}
+						
 					</ul>
 					<div className="detail-view">
-						<DetailView detail={this.state.artDetail} />
 					</div>
 				</div>
 			</div>
 		);
 	}	
 }
+// disable UL
+// {this.state.top100.map(artwork => 
+// 	<li key={artwork.id} onClick={this.showDetail}>{artwork.title}</li>
+// )}
+
+// disable class detail-view
+// <DetailView detail={this.state.artDetail} />
 
 export default Top100;
