@@ -1,12 +1,11 @@
+// Module imports
 import { combineReducers } from 'redux';
 
-import Top100Reducer from './reducer_top_100.js'; 
-
-// Each key set in the rootReducer sets the 
-// key in the global state.
+// Reducer imports
+import TopArtworksReducer from './TopArtworks_reducer.js'; 
 
 const rootReducer = combineReducers({
-  top100: Top100Reducer
+	topArtworks: TopArtworksReducer,
 });
 
 export default rootReducer;

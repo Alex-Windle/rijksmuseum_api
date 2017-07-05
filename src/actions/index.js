@@ -1,7 +1,8 @@
-export const ARTWORKS = 'ARTWORKS'; 
+export const TOP_ARTWORKS = 'TOP_ARTWORKS'; 
 
-export const getArtworks = () => {
+export const getTopArtworks = (list) => {
 	return {
-		type: ARTWORKS,
+		type: TOP_ARTWORKS,
+		payload: [...list],
 	};
 }
