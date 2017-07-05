@@ -28,11 +28,11 @@ export default function() {
 
 	// return a data object to populate state
 
+	// how to create an async call, save data then update containers
+
 	// return [
 	// 	{title: "Artwork 1"}, 
 	// 	{title: "Artwork 2"}
 	// ]
-	return (
-		
-	);
+	return <div>hi</div>;
 }
