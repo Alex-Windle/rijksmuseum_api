@@ -9,11 +9,11 @@ export default (state = initialState, action) => {
 
 	switch(action.type) {
 		case TOP_ARTWORKS:
-		return [
-			...state,
-			...payload,
-		];
+			return [
+				...state,
+				...payload,
+			];
 		default: 
-		return state; 
+			return state; 
 	}
 }

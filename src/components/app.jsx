@@ -49,6 +49,8 @@ const mapStoreToProps = state => ({
 	topArtworks: state.topArtworks,
 });
 
-const mapDispatchToProps = () => ({getTopArtworks});
+const mapDispatchToProps = () => ({
+	getTopArtworks,
+});
 
 export default connect(mapStoreToProps, mapDispatchToProps())(App);
