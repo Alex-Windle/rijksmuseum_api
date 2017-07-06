@@ -4,9 +4,9 @@ import $ from 'jquery';
 import { connect } from 'react-redux'; 
 
 // Component imports
-import Top100 from '../containers/top-100.jsx';
-import SearchBar from './search-bar.jsx';
-import Results from './results.jsx';  
+import Top20Artworks from '../containers/Top20Artworks'; 
+// import SearchBar from './search-bar.jsx';
+// import Results from './results.jsx';  
 
 // Action imports
 import { getTopArtworks } from '../actions/index'; 
@@ -18,17 +18,20 @@ class App extends Component {
 	}
 
 	render() {
-		
 		const topArtworks = this.props.topArtworks; 
-		
-		console.log("component pulls in 20 artworks:", topArtworks);
-
-		if (topArtworks.length < 1) {
-			return <div>Loading...</div>;
+		if (!topArtworks.length) {
+			return (
+				<div>
+					Top 20 Artworks:
+					<br /><br />
+					Loading...
+				</div>
+			);
 		} else {
 			return (
 				<div>
-					Top 20 Artworks
+					Top 20 Artworks:
+					<Top20Artworks topArtworks={topArtworks} />
 				</div>
 			);
 		}	
