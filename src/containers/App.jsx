@@ -27,7 +27,7 @@ class App extends Component {
 					<strong>Top 20 Artworks</strong>
 					<br /> 
 					<br /> 
-					<em>Loading...</em>
+					<img src="../../style/loading.svg" /> 
 				</div>
 			);
 		} else {
