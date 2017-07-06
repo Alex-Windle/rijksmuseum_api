@@ -13,35 +13,25 @@ import { getTopArtworks } from '../actions/index';
 
 class App extends Component {
 
-	componentDidMount() {
-		fetch("https://www.rijksmuseum.nl/api/en/collection/?key=cbUNdwH5&ps=20&imgonly=True&toppieces=True")
-			.then(resp => resp.json())
-			.then(resp => {
-				this.props.getTopArtworks(resp.artObjects);
-			})
+	componentWillMount() {
+		this.props.getTopArtworks();
 	}
 
 	render() {
+		
 		const topArtworks = this.props.topArtworks; 
+		
 		console.log("component pulls in 20 artworks:", topArtworks);
 
-		return (
-		  <div>
-		  	<br/>
-		  	<h3><strong>Rijksmuseum App</strong></h3>
-		  	<br/>
-		  	Top 20:
-		  	<ul>
-		  		<li>Show loading (during call) or artwork titles here when available</li>
-		  	</ul>
-		  	<div></div>
-		  	<br/><br />
-		  	Searchbar
-		  	<br/><br/>
-		  	Results
-		  	<br/><br/>
-		  </div>
-		);
+		if (topArtworks.length < 1) {
+			return <div>Loading...</div>;
+		} else {
+			return (
+				<div>
+					Top 20 Artworks
+				</div>
+			);
+		}	
 	}
 }
 

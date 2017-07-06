@@ -1,8 +1,6 @@
 import { TOP_ARTWORKS } from '../actions/index'; 
 
-const initialState = {
-	payload:[]
-}; 
+const initialState = []; 
 
 export default (state = initialState, action) => {
 	const payload = action.payload; 

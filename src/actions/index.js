@@ -15,10 +15,13 @@
 
 export const TOP_ARTWORKS = 'TOP_ARTWORKS'; 
 
-export const getTopArtworks = (list) => {
-	
+export const getTopArtworks = () => {
+	const request = fetch("https://www.rijksmuseum.nl/api/en/collection/?key=cbUNdwH5&ps=20&imgonly=True&toppieces=True")
+		.then(resp => resp.json())
+		.then(resp => resp.artObjects) // returns a promise
+
 	return {
 		type: TOP_ARTWORKS,
-		payload: [...list],
+		payload: request,  // Redux Promise PAUSES to allow data call
 	};
 }
