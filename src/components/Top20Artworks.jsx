@@ -13,7 +13,7 @@ class Top20Artworks extends Component {
 	}; 
 
 	handleClick(e) {
-		console.log(e);
+		console.log(e.target);
 	};
 
 	render() {
