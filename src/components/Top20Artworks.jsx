@@ -1,5 +1,9 @@
+// Module imports
 import React, {Component} from 'react'; 
 import $ from 'jquery'; 
+
+// Component imports
+import DetailView from '../components/DetailView'; 
 
 export default (props) => {
 	const { topArtworks } = props; 
@@ -7,8 +11,8 @@ export default (props) => {
 
 	const renderArtworks = (artworks) => {
 		return artworks.map(artwork => <li key={artwork.id}>{artwork.title}</li>); 
-	}; 
-
+	};  
+	
 	return (
 		<div>
 			<strong>Explore</strong> top artworks housed in the museum.
@@ -17,6 +21,7 @@ export default (props) => {
 					{renderArtworks(topArtworks)}
 				</ul>
 				<div className="detail-view">
+					<DetailView />
 				</div>
 			</div>
 		</div>
