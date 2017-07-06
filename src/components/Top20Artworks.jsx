@@ -3,7 +3,6 @@ import React, {Component} from 'react';
 import $ from 'jquery'; 
 
 // Component imports
-import Artwork from '../components/Artwork'; 
 import DetailView from '../components/DetailView'; 
 
 export default (props) => {
@@ -12,11 +11,8 @@ export default (props) => {
 	const renderList = topArtworks.map(artwork => {
 		return (
 			<li key={artwork.id}>
-				<Artwork 
-					title={artwork.title} 
-					artist={artwork.principalOrFirstMaker} 
-					image={artwork.webImage.url} 
-				/>
+				<img src={artwork.webImage.url} height="70px" /> 
+				{artwork.title} 
 			</li>
 		);
 	});
@@ -24,8 +20,8 @@ export default (props) => {
 	return (
 		<div>
 			<strong>Explore</strong> top artworks housed in the museum.
-			<div className="top100-detail-wrapper">
-				<ul className="top100-list">
+			<div className="top20-detail-wrapper">
+				<ul className="top20-list">
 					{renderList}
 				</ul>
 				<div className="detail-view">
