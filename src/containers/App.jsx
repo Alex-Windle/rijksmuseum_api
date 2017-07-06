@@ -4,7 +4,7 @@ import $ from 'jquery';
 import { connect } from 'react-redux'; 
 
 // Component imports
-import Top20Artworks from '../containers/Top20Artworks'; 
+import Top20Artworks from '../components/Top20Artworks'; 
 // import SearchBar from './search-bar.jsx';
 // import Results from './results.jsx';  
 

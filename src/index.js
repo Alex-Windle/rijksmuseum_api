@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import createStoreWithMiddleware from './store/createStore'; 
 
 // Component imports
-import App from './components/app.jsx';
+import App from './containers/App.jsx';
 
 // Reducer imports 
 import { rootReducer } from './reducers/index'; 
