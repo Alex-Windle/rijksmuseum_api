@@ -3,22 +3,30 @@ import React, {Component} from 'react';
 import $ from 'jquery'; 
 
 // Component imports
+import Artwork from '../components/Artwork'; 
 import DetailView from '../components/DetailView'; 
 
 export default (props) => {
 	const { topArtworks } = props; 
-	console.log(topArtworks); 
 
-	const renderArtworks = (artworks) => {
-		return artworks.map(artwork => <li key={artwork.id}>{artwork.title}</li>); 
-	};  
-	
+	const renderList = topArtworks.map(artwork => {
+		return (
+			<li key={artwork.id}>
+				<Artwork 
+					title={artwork.title} 
+					artist={artwork.principalOrFirstMaker} 
+					image={artwork.webImage.url} 
+				/>
+			</li>
+		);
+	});
+
 	return (
 		<div>
 			<strong>Explore</strong> top artworks housed in the museum.
 			<div className="top100-detail-wrapper">
 				<ul className="top100-list">
-					{renderArtworks(topArtworks)}
+					{renderList}
 				</ul>
 				<div className="detail-view">
 					<DetailView />
