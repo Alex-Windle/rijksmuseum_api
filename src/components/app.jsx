@@ -22,15 +22,22 @@ class App extends Component {
 		if (!topArtworks.length) {
 			return (
 				<div>
-					Top 20 Artworks:
-					<br /><br />
-					Loading...
+					<br /> 
+					<br /> 
+					<strong>Top 20 Artworks</strong>
+					<br /> 
+					<br /> 
+					<em>Loading...</em>
 				</div>
 			);
 		} else {
 			return (
 				<div>
-					Top 20 Artworks:
+					<br /> 
+					<br /> 
+					<strong>Top 20 Artworks</strong>
+					<br /> 
+					<br /> 
 					<Top20Artworks topArtworks={topArtworks} />
 				</div>
 			);
