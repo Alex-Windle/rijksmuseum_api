@@ -1,4 +1,4 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import reducers from '../reducers/index';
 import ReduxPromise from 'redux-promise';
 
