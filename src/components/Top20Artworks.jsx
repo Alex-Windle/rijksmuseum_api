@@ -41,8 +41,7 @@ class Top20Artworks extends Component {
 			const { id, webImage, title } = artwork; 
 			return (
 				<li key={id} onClick={() => {return this.handleClick(id)}}>
-					<img src={webImage.url} height="70px" /> 
-					{title} 
+					<img src={webImage.url} /> 
 				</li>
 			);
 		});

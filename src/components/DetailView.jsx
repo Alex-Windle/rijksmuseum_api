@@ -8,13 +8,18 @@ const DetailView = (props) => {
 	const { image, link } = props;
 
 	return (
-		<div>
-			<img src={image} alt="No image available." className="detail-img"/>
-			<br/><br/>
-			<p>{data[0]}</p>
-			<em><p>{data[1]}</p></em>
-			<p style={{fontSize:"13px"}}>{data[2]}</p>
-			<a href={link} target="_blank">Learn more</a>
+		<div className="detail-card">
+			<div className="img-container">
+				<img src={image} alt="No image available." />
+			</div>
+			<div className="title-artist-year-wrapper">
+				<div className="title">{data[0]}</div>
+				{data[1]}
+				{data[2]}
+			</div>
+			<div className="learn-more">
+				<a href={link} target="_blank">Learn more</a>
+			</div>
 		</div>
 	);
 }
