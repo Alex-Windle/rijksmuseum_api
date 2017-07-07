@@ -8,14 +8,12 @@ import DetailView from '../components/DetailView';
 class Top20Artworks extends Component {
 	constructor(props) {
 		super(props);
-
 		this.state = { 
 			data: "Ten weepers from the tomb of Isabella of Bourbon, Renier van Thienen (attributed to), c. 1475 - c. 1476",
 			principalOrFirstMaker: "Renier van Thienen",
 			image: "http://lh5.ggpht.com/EHhJDrv4IB_89m9w9VlcYRYHYOuvU72iwD11oZ1HL3J5QcCMfmAD48CVxAtUwts9RT55W4lWSPI19wb1lSRZ9zecKMA=s0",
 			link: "https://www.rijksmuseum.nl/en/collection/BK-AM-33-C"
 		};
-
 		this.handleClick = this.handleClick.bind(this);
 	}; 
 
@@ -28,7 +26,6 @@ class Top20Artworks extends Component {
 		let art = topArtworks.filter(artwork => {
 			return artwork.id === id;
 		}); 
-		console.log(art[0])
 		this.setState({
 			data: art[0].longTitle,
 			principalOrFirstMaker: art[0].principalOrFirstMaker,
@@ -71,4 +68,3 @@ class Top20Artworks extends Component {
 }
 
 export default Top20Artworks;
-
