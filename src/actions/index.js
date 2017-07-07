@@ -14,6 +14,7 @@
 // commences.
 
 export const TOP_ARTWORKS = 'TOP_ARTWORKS'; 
+export const DETAIL_VIEW = 'DETAIL_VIEW'; 
 
 export const getTopArtworks = () => {
 	const request = fetch("https://www.rijksmuseum.nl/api/en/collection/?key=cbUNdwH5&ps=20&imgonly=True&toppieces=True")
@@ -22,6 +23,19 @@ export const getTopArtworks = () => {
 
 	return {
 		type: TOP_ARTWORKS,
+		payload: request,  // Redux Promise PAUSES to allow data call
+	};
+}
+
+export const getDetailView = (id) => {
+	id = id.split('').splice(3).join('');
+	console.log('parameter: ', id);
+	const request = fetch(`https://www.rijksmuseum.nl/api/en/collection/${id}?key=cbUNdwH5`)
+		.then(resp => resp.json())
+		.then(resp => {console.log('response: ', resp)}) // returns a promise
+
+	return {
+		type: DETAIL_VIEW,
 		payload: request,  // Redux Promise PAUSES to allow data call
 	};
 }
