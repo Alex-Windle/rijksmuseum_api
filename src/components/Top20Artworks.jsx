@@ -9,37 +9,36 @@ class Top20Artworks extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = { artwork: {} };
+		this.state = { 
+			data: "Ten weepers from the tomb of Isabella of Bourbon, Renier van Thienen (attributed to), c. 1475 - c. 1476",
+			principalOrFirstMaker: "Renier van Thienen",
+			image: "http://lh5.ggpht.com/EHhJDrv4IB_89m9w9VlcYRYHYOuvU72iwD11oZ1HL3J5QcCMfmAD48CVxAtUwts9RT55W4lWSPI19wb1lSRZ9zecKMA=s0",
+			link: "https://www.rijksmuseum.nl/en/collection/BK-AM-33-C"
+		};
+
 		this.handleClick = this.handleClick.bind(this);
 	}; 
 
-	handleClick(number) {
-		console.log("clicked id #", number);
-
-		// When the user clicks an image, a detail view appears. 
-
-		// Where does this information come from?
-
-		// This component has an abundance of data available through props.
-		// For example, id, link to Rijksmuseum page, title, artist, place of 
-		// production, etc. 
-
-		// This function should take in an id, search the artworks array 
-		// for the item by id, then save the artwork object blob to the 
-		// component state. 
-
-		// Then, pass down the information you would like to display to the 
-		// DetailView component. 
-
+	handleClick(id) {
+		// When the user clicks an image, the detail view appears. 
+		// This function takes in an image id, searches the array 
+		// for the image, and saves the data in component state.  
+		// It passes the data to the DetailView component to display. 
 		const { topArtworks } = this.props;
 		let art = topArtworks.filter(artwork => {
-			return artwork.id === number;
+			return artwork.id === id;
 		}); 
-		this.setState({ artwork: art[0] });
+		console.log(art[0])
+		this.setState({
+			data: art[0].longTitle,
+			principalOrFirstMaker: art[0].principalOrFirstMaker,
+			image: art[0].webImage.url,
+			link: art[0].links.web
+		});
 	};
 
 	render() {
-		console.log(this.state);
+		const { data, principalOrFirstMaker, image, link } = this.state;
 		const { topArtworks } = this.props; 
 		const renderList = topArtworks.map(artwork => {
 			const { id, webImage, title } = artwork; 
@@ -58,7 +57,12 @@ class Top20Artworks extends Component {
 						{renderList}
 					</ul>
 					<div className="detail-view">
-						<DetailView />
+						<DetailView 
+							data={data}
+							principalOrFirstMaker={principalOrFirstMaker}
+							image={image}
+							link={link}
+						/>
 					</div>
 				</div>
 			</div>
