@@ -12,8 +12,8 @@ const DetailView = (props) => {
 	const { image, link } = props;
 
 	const renderDataLine1 = (string) => {
-		if (string.length > 55) {
-			string = string.split('').slice(0, 55).join('') + "...";
+		if (string.length > 40) {
+			string = string.split('').slice(0, 40).join('') + "...";
 			return string; 
 		} else {
 			return dataLine1; 
@@ -23,15 +23,21 @@ const DetailView = (props) => {
 	return (
 		<div className="detail-card">
 			<div className="img-container">
-				<img src={image} alt="No image available." className="detail-card-img"/>
-			</div>
-			<div className="title-artist-year-wrapper">
-				<div className="title">{renderDataLine1(dataLine1)}</div>
-				{dataLine2}
-				{dataLine3}
-			</div>
-			<div className="learn-more">
-				<a href={link} target="_blank">Learn more</a>
+				<div className="title-artist-year-wrapper">
+					<div className="long-title">{renderDataLine1(dataLine1)}</div>
+					<div className="title-button-wrapper">
+						<div className="short-title">
+							<div>{dataLine2}</div>
+							<div>{dataLine3}</div>
+						</div>
+						<div className="learn-more">
+							<a href={link} target="_blank">Learn more</a>
+						</div>
+					</div>
+				</div>
+				<div>
+					<img src={image} alt="No image available." className="detail-card-img" />
+				</div>
 			</div>
 		</div>
 	);
