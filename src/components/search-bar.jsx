@@ -7,19 +7,14 @@ class SearchBar extends Component {
 		this.state = {term: ''};
 	} 
 
-	renderButton () {
-		return PopularSearches.map(item => {
-			return(<li key={item} onClick={this.clickHandler.bind(this)}>{item}</li>);
-		}); 
-	}
+	// renderButtons () {
+	// 	return PopularSearches.map(item => {
+	// 		return(<li key={item} onClick={this.clickHandler.bind(this)}>{item}</li>);
+	// 	}); 
+	// }
+	// {this.renderButtons()}
 
 	render(){
-		// const boopButton = this.state.boopTerm.map(function(item){
-		// 	return (<li onClick={this.clickHandler}>{item}</li>);
-		// })
-
-		// const boopButton = (<li onClick={this.clickHandler.bind(this)}>Boop</li>);
-
 		return (
 			<div>
 				<p>
@@ -35,7 +30,7 @@ class SearchBar extends Component {
 				<div className="popular-searches-wrapper">
 					<p>Popular searches</p>
 					<ul className="popular-searches">
-						{this.renderButton()}
+						<li>...to build after search function is done.</li>
 					</ul>
 				</div>	
 			</div>
@@ -50,10 +45,10 @@ class SearchBar extends Component {
 		this.props.onSearchTermChange(searchWord); 
 	}
 
-	clickHandler(event) {
-		this.setState({term: event.currentTarget.innerHTML});
-		this.props.onSearchTermChange(event.currentTarget.innerHTML);
-	} 
+	// clickHandler(event) {
+	// 	this.setState({term: event.currentTarget.innerHTML});
+	// 	this.props.onSearchTermChange(event.currentTarget.innerHTML);
+	// } 
 }
 
 export default SearchBar;

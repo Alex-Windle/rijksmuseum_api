@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 
 // Component imports
 import Top20Artworks from '../components/Top20Artworks'; 
-// import SearchBar from './search-bar.jsx';
-// import Results from './results.jsx';  
+import SearchBar from '../components/search-bar.jsx';
+// import Results from '../components/results.jsx';  
 
 // Action imports
 import { getTopArtworks } from '../actions/index'; 
@@ -22,6 +22,7 @@ class App extends Component {
 				<h1>Rijksmuseum App</h1> 
 				<br /> 
 				{!topArtworks.length ? <img src="../../style/loading.svg" /> : <Top20Artworks topArtworks={topArtworks} />}
+				<SearchBar />
 			</div>
 		);
 	}	
