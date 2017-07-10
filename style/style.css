@@ -139,6 +139,7 @@ li.no-results{
 .top20-detail-wrapper ul li img{
 	width: 100px;
     margin: 0px 0px;
+    cursor: pointer;
     transition: width .3s;
 }
 .top20-detail-wrapper ul li img:hover{
