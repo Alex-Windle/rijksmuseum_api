@@ -16,7 +16,7 @@ const DetailView = (props) => {
 			string = string.split('').slice(0, 40).join('') + "...";
 			return string; 
 		} else {
-			return dataLine1; 
+			return string; 
 		}
 	};
 

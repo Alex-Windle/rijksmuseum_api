@@ -139,9 +139,10 @@ li.no-results{
 .top20-detail-wrapper ul li img{
 	width: 100px;
     margin: 0px 0px;
+    transition: width .3s;
 }
 .top20-detail-wrapper ul li img:hover{
-	width: 108px;
+	width: 115px;
 }
 /* Explore Top Artworks - Detail View */
 .detail-card {
