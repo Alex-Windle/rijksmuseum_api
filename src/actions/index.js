@@ -15,6 +15,7 @@
 
 export const TOP_ARTWORKS = 'TOP_ARTWORKS'; 
 export const DETAIL_VIEW = 'DETAIL_VIEW'; 
+export const KEYWORD = 'KEYWORD'; 
 
 export const getTopArtworks = () => {
 	const request = fetch("https://www.rijksmuseum.nl/api/en/collection/?key=cbUNdwH5&ps=20&imgonly=True&toppieces=True")

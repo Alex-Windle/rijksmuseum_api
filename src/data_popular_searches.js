@@ -13,7 +13,9 @@ const popular_searches = [
 	'Mary and Joseph',
 	'Charles V',
 	'Dutch porcelain',
-	'Birds'
+	'Birds',
+	'Big wooden ships', 
+	'horse paintings'
 ]
 
 export default popular_searches; 

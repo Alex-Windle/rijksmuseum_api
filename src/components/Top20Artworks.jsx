@@ -8,6 +8,9 @@ import DetailView from '../components/DetailView';
 class Top20Artworks extends Component {
 	constructor(props) {
 		super(props);
+		// State holds data to pass down to child 
+		// Initial state populates with a specific artwork
+		// Users click to change state
 		this.state = { 
 			data: "Ten weepers from the tomb of Isabella of Bourbon, Renier van Thienen (attributed to), c. 1475 - c. 1476",
 			principalOrFirstMaker: "Renier van Thienen",
@@ -18,10 +21,10 @@ class Top20Artworks extends Component {
 	}; 
 
 	handleClick(id) {
-		// When the user clicks an image, the detail view appears. 
-		// This function takes in an image id, searches the array 
-		// for the image, and saves the data in component state.  
-		// It passes the data to the DetailView component to display. 
+		// When users click an image, it appears in a detail view. 
+		// This function takes in an id, searches the props  
+		// for the image, and saves the data to component state.  
+		// The data is passed to the child to display. 
 		const { topArtworks } = this.props;
 		let art = topArtworks.filter(artwork => {
 			return artwork.id === id;
@@ -35,7 +38,9 @@ class Top20Artworks extends Component {
 	};
 
 	render() {
+		// Passes data to child 
 		const { data, principalOrFirstMaker, image, link } = this.state;
+		// Renders data in component
 		const { topArtworks } = this.props; 
 		const renderList = topArtworks.map(artwork => {
 			const { id, webImage, title } = artwork; 
