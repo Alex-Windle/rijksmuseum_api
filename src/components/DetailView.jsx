@@ -35,8 +35,10 @@ const DetailView = (props) => {
 						</div>
 					</div>
 				</div>
-				<div>
-					<img src={image} alt="No image available." className="detail-card-img" />
+				<div className="box">
+					<div>
+						<img src={image} alt="No image available." className="detail-card-img" />
+					</div>
 				</div>
 			</div>
 		</div>
