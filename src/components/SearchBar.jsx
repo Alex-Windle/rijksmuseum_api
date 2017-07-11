@@ -31,6 +31,8 @@ class SearchBar extends Component {
 					<p>Popular searches</p>
 					<ul className="popular-searches">
 						<li>...to build after search function is done.</li>
+						<li>Hook up buttons to populate the search field w/ common searches.</li>
+						<li>"Big wooden ships", "horse paintings", "Rembrandt", etc.</li>
 					</ul>
 				</div>	
 			</div>
@@ -39,13 +41,15 @@ class SearchBar extends Component {
 
 	onInputChange(searchWord) {
 		// set state
-		this.setState({term: searchWord}); 
+		// this.setState({term: searchWord}); 
 
-		// pass props up to parent component for API call 
+		// Capture the search term
+		// pass props up to parent component, which fires 
+		// the action creator for API call 
 		this.props.onSearchTermChange(searchWord); 
 	}
 
-	// clickHandler(event) {
+	// buttonHandler(event) {
 	// 	this.setState({term: event.currentTarget.innerHTML});
 	// 	this.props.onSearchTermChange(event.currentTarget.innerHTML);
 	// } 
