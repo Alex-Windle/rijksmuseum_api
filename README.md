@@ -1,16 +1,20 @@
 # Rijksmuseum App
 
-Proof of concept for Belgard Products Pages:
+Features:
 
-* Pulling in large amounts of data
-* Sorting and displaying data by keyword
-* Showing a detail view of items
+* Pulls data from public API
+* Saves data to Redux store & React components
+* Sorts and displays data by search term
+* Shows a detail view of items
+* ES6 features: arrow functions, destructuring assignment, modules & template literals
 
-In progress...refactoring React/Redux app...
+Redux app. 
 
-![alt text](rijks_screenshot_7_10.png)
+![alt text](screenshot-complete1.png)
 
-...refactoring React/Redux app...
+![alt text](screenshot-complete2.png)
+
+...refactor in progress.
 
 ![alt text](rijks_screenshot_7_07.png)
 
