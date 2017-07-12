@@ -17,7 +17,7 @@ class SearchBar extends Component {
 
 	renderButtons () {
 		return PopularSearches.map(item => {
-			return(<li key={item} onClick={this.buttonHandler.bind(this)}>{item}</li>);
+			return(<li key={item} onClick={this.buttonHandler.bind(this)}><div className="text-wrapper">{item}</div></li>);
 		}); 
 	}
 
@@ -35,7 +35,7 @@ class SearchBar extends Component {
 					/>
 				</p>
 				<div className="popular-searches-wrapper">
-					<p>Popular searches</p>
+					<p id="popular-searches-title">Popular searches</p>
 					<ul className="popular-searches">
 						{this.renderButtons()}
 					</ul>
@@ -58,9 +58,9 @@ class SearchBar extends Component {
 	}
 
 	buttonHandler(event) {
-		this.setState({term: event.currentTarget.innerHTML});
+		this.setState({term: event.target.innerHTML});
 		// this.props.onSearchTermChange(event.currentTarget.innerHTML);
-		this.getResults(event.currentTarget.innerHTML);
+		this.getResults(event.target.innerHTML);
 	} 
 
 	getResults(keyword) {

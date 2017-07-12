@@ -50,8 +50,9 @@ img{
 }
 .popular-searches-wrapper{
 	background: #f96a59;
-    padding: 16px 34px;
+    padding: 16px 17px;
     border-radius: 9px;
+    width: 100%;
 }
 .popular-searches-wrapper p{
 	color: white;
@@ -66,22 +67,25 @@ img{
     margin: 0 auto;
     padding: 0;
 }
+ul.popular-searches {
+	margin: 0 0 0 0;
+}
 .popular-searches li {
-	/*border: 2px solid white; */
-	border-radius: 35px;
-    width: 152px;
-    background: #f96a59;
-    padding: 6px 0px;
+    width: 155px;
     color: white;
-    text-align: center;
     font-size: 14px;
     letter-spacing: 1.3px;
     font-weight: lighter;
-    margin: 0px 35px 14px 0px;
 }
-.popular-searches li:hover {
-	background: white;
-    color: #f96a59;
+.popular-searches li .text-wrapper {
+	width: 133px;
+	border-bottom: 1px solid #f96a59;
+}
+.popular-searches li:hover .text-wrapper{
+    border-bottom: 1px solid white;
+}
+#popular-searches-title {
+	margin: 0;
 }
 li.no-results{
 	font-size: 12px;
