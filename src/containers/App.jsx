@@ -21,20 +21,21 @@ class App extends Component {
 		// The action creator makes the API call
 		// The payload is the artwork detail information 
 		// The payload is saved to the Redux store
-
 	// }
 
 	render() {
-		const topArtworks = this.props.topArtworks; 
+		const { topArtworks, searchedArtworks, searchByKeyword } = this.props; 
+		console.log('props...', searchedArtworks);
+
 		return (
 			<div>
 				<h1>Rijksmuseum App</h1> 
 				<br /> 
 				{!topArtworks.length ? <img src="../../style/loading.svg" /> : <Top20Artworks topArtworks={topArtworks} />}
-				<SearchBar onSearchTermChange={(searchWord) => {
-					// Fire the actionCreator here!!
-					// If that doesn't work, do it above the render...
-					this.searchByKeyword(searchWord)}
+				<SearchBar onSearchTermChange={keyword => {
+					console.log('keyword passes to action creator: ', keyword);
+					searchByKeyword(keyword);
+					}
 				} />
 			</div>
 		);
@@ -43,12 +44,14 @@ class App extends Component {
 
 const mapStoreToProps = state => ({
 	topArtworks: state.topArtworks,
+	searchedArtworks: state.searchedArtworks,
 	// Map artwork data to props, pass down to component to display
 	// Display searched artwork in <Results /> component
 });
 
 const mapDispatchToProps = () => ({
 	getTopArtworks,
+	searchByKeyword,
 	// Dispatches action creator to reducers
 });
 

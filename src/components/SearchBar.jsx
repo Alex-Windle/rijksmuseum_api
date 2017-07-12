@@ -39,14 +39,15 @@ class SearchBar extends Component {
 		);
 	}
 
-	onInputChange(searchWord) {
+	onInputChange(keyword) {
 		// set state
-		// this.setState({term: searchWord}); 
+		this.setState({term: keyword}); 
 
 		// Capture the search term
 		// pass props up to parent component, which fires 
 		// the action creator for API call 
-		this.props.onSearchTermChange(searchWord); 
+		console.log("search word passes up to parent: ", keyword);
+		this.props.onSearchTermChange(keyword); 
 	}
 
 	// buttonHandler(event) {
