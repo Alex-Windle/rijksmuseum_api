@@ -4,12 +4,10 @@ import { connect } from 'react-redux';
 
 // Component imports
 import Top20Artworks from '../components/Top20Artworks'; 
-import SearchBar from '../components/SearchBar.jsx';
-// import Results from '../components/results.jsx';  
+import SearchBar from '../components/SearchBar.jsx'; 
 
 // Action imports
-import { getTopArtworks } from '../actions/index'; 
-// import { searchByKeyword } from '../actions/index'; 
+import { getTopArtworks } from '../actions/index';  
 
 class App extends Component {
 	componentWillMount() {
@@ -33,14 +31,12 @@ class App extends Component {
 
 const mapStoreToProps = state => ({
 	topArtworks: state.topArtworks,
-	// searchedArtworks: state.searchedArtworks,
 	// Map artwork data to props, pass down to component to display
-	// Display searched artwork in <Results /> component
+	// Display searched artwork in Results component
 });
 
 const mapDispatchToProps = () => ({
 	getTopArtworks,
-	// searchByKeyword,
 	// Dispatches action creator to reducers
 });
 
