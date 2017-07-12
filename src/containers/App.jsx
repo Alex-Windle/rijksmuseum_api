@@ -9,7 +9,7 @@ import SearchBar from '../components/SearchBar.jsx';
 
 // Action imports
 import { getTopArtworks } from '../actions/index'; 
-import { searchByKeyword } from '../actions/index'; 
+// import { searchByKeyword } from '../actions/index'; 
 
 class App extends Component {
 	componentWillMount() {
@@ -25,18 +25,13 @@ class App extends Component {
 
 	render() {
 		const { topArtworks, searchedArtworks, searchByKeyword } = this.props; 
-		console.log('props...', searchedArtworks);
 
 		return (
 			<div>
 				<h1>Rijksmuseum App</h1> 
 				<br /> 
 				{!topArtworks.length ? <img src="../../style/loading.svg" /> : <Top20Artworks topArtworks={topArtworks} />}
-				<SearchBar onSearchTermChange={keyword => {
-					console.log('keyword passes to action creator: ', keyword);
-					searchByKeyword(keyword);
-					}
-				} />
+				<SearchBar />
 			</div>
 		);
 	}	
@@ -44,14 +39,14 @@ class App extends Component {
 
 const mapStoreToProps = state => ({
 	topArtworks: state.topArtworks,
-	searchedArtworks: state.searchedArtworks,
+	// searchedArtworks: state.searchedArtworks,
 	// Map artwork data to props, pass down to component to display
 	// Display searched artwork in <Results /> component
 });
 
 const mapDispatchToProps = () => ({
 	getTopArtworks,
-	searchByKeyword,
+	// searchByKeyword,
 	// Dispatches action creator to reducers
 });
 

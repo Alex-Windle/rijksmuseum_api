@@ -15,7 +15,7 @@
 
 export const TOP_ARTWORKS = 'TOP_ARTWORKS'; 
 export const DETAIL_VIEW = 'DETAIL_VIEW'; 
-export const KEYWORD = 'KEYWORD'; 
+// export const KEYWORD = 'KEYWORD'; 
 
 export const getTopArtworks = () => {
 	const request = fetch("https://www.rijksmuseum.nl/api/en/collection/?key=cbUNdwH5&ps=20&imgonly=True&toppieces=True")
@@ -41,14 +41,14 @@ export const getTopArtworks = () => {
 // 	};
 // }
 
-export const searchByKeyword = (keyword) => {
-	console.log('keyword received by action creator: ', keyword);
-	const request = fetch(`https://www.rijksmuseum.nl/api/en/collection/?key=cbUNdwH5&p=0&ps=5&imgonly=True&q=${keyword}`) 
-		.then(resp => resp.json())
-		.then(resp => resp.artObjects) // returns a promise
+// export const searchByKeyword = (keyword) => {
+// 	console.log('keyword received by action creator: ', keyword);
+// 	const request = fetch(`https://www.rijksmuseum.nl/api/en/collection/?key=cbUNdwH5&p=0&ps=5&imgonly=True&q=${keyword}`) 
+// 		.then(resp => resp.json())
+// 		.then(resp => resp.artObjects) // returns a promise
 	
-	return {
-		type: KEYWORD,
-		payload: request, // Redux Promise PAUSES to allow data call
-	};
-}
+// 	return {
+// 		type: KEYWORD,
+// 		payload: request, // Redux Promise PAUSES to allow data call
+// 	};
+// }

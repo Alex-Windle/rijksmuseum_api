@@ -4,7 +4,10 @@ import PopularSearches from '../data_popular_searches.js';
 class SearchBar extends Component {
 	constructor(props) {
 		super(props); 
-		this.state = {term: ''};
+		this.state = {
+			term: '',
+			results: [],
+		};
 	} 
 
 	// renderButtons () {
@@ -15,6 +18,7 @@ class SearchBar extends Component {
 	// {this.renderButtons()}
 
 	render(){
+		console.log('state: ', this.state.results);
 		return (
 			<div>
 				<p>
@@ -46,8 +50,12 @@ class SearchBar extends Component {
 		// Capture the search term
 		// pass props up to parent component, which fires 
 		// the action creator for API call 
-		console.log("search word passes up to parent: ", keyword);
-		this.props.onSearchTermChange(keyword); 
+		// this.props.onSearchTermChange(keyword); 
+
+		fetch(`https://www.rijksmuseum.nl/api/en/collection/?key=cbUNdwH5&p=0&ps=5&imgonly=True&q=${keyword}`)
+			.then(resp => resp.json())
+			.then(resp => resp.artObjects)
+			.then(results => this.setState({results: results}));
 	}
 
 	// buttonHandler(event) {
