@@ -20,40 +20,58 @@
 	padding: 0;
 }
 .artwork-list li{
-	display: block; 
-	font-size: 13px;
-	list-style: none;
-	height: 240px;
-	width: 175px;
-	margin: 15px;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	overflow: hidden;
+	display: block;
+    font-size: 13px;
+    list-style: none;
+    height: 283px;
+    width: 222px;
+    margin-top: 10px;
+    padding-left: 21px;
+    padding-right: 21px;
+    white-space: nowrap;
 }
-/*.img-wrapper{
+.img-wrapper{
 	display: flex; 
 	flex-direction: column;
 	align-items: center;
-}*/
-/*.img-wrapper-empty{
-	height: 140px;
-	width: 170px;
+}
+img {
+	width: 187px;
+}
+#caption {
+	margin: 2px 0 0 2px;
+	text-overflow: ellipsis;
+    overflow: hidden;
+}
+/* Button */
+	/* unvisited link */
+#caption a {
+	text-decoration: none; 
+	color: dimgray;
+	font-weight: bolder;
+}
+/* visited link */
+#caption a:visited {
+	color: dimgray;
+	font-weight: bolder;
+}
+/* mouse over link */
+#caption a:hover {
+	color: black;
+}
+.img-wrapper-empty{
 	border: 0.3px solid dimgray;
 	border-radius: 5px;
 	display: flex;
 	flex-direction: row; 
 	justify-content: center;
 	align-items: center;
-}*/
-img{
-	width: 300px;
 }
 .popular-searches-wrapper{
 	background: #f96a59;
     padding: 16px 17px;
     border-radius: 9px;
-    width: 100%;
-}
+    width: 81%; }
 .popular-searches-wrapper p{
 	color: white;
     letter-spacing: 1px;
@@ -68,7 +86,7 @@ img{
     padding: 0;
 }
 ul.popular-searches {
-	margin: 0 0 0 0;
+	/*margin: 0 0 0 0;*/
 }
 .popular-searches li {
     width: 155px;
@@ -85,7 +103,7 @@ ul.popular-searches {
     border-bottom: 1px solid white;
 }
 #popular-searches-title {
-	margin: 0;
+	margin: 0 0 3px 45px;
 }
 li.no-results{
 	font-size: 12px;
@@ -116,6 +134,9 @@ li.no-results{
 	flex-direction: column;
 	align-items: center;
 	overflow: hidden;
+}
+#detail-image{
+	width: 300px;
 }
 /* Explore Top Artworks - Top 20 Artworks */
 .top20-detail-wrapper ul{

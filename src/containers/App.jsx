@@ -15,7 +15,7 @@ class App extends Component {
 	componentWillMount() {
 		this.props.getTopArtworks();
 	}
-	
+
 	render() {
 		const { topArtworks, searchedArtworks, searchByKeyword } = this.props; 
 		return (
@@ -25,6 +25,7 @@ class App extends Component {
 				<SearchBar />
 				<br /><br />
 				{!topArtworks.length ? <img src="../../style/loading.svg" /> : <Top20Artworks topArtworks={topArtworks} />}
+				<br /><br />
 			</div>
 		);
 	}	
