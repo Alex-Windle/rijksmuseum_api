@@ -32,7 +32,6 @@ class SearchBar extends Component {
 						onChange={event => this.onInputChange(event.target.value)}
 					/>
 				</p>
-				<Results results={this.state.results} /> 
 				<div className="popular-searches-wrapper">
 					<p>Popular searches</p>
 					<ul className="popular-searches">
@@ -41,6 +40,8 @@ class SearchBar extends Component {
 						<li>"Big wooden ships", "horse paintings", "Rembrandt", etc.</li>
 					</ul>
 				</div>	
+				<br /><br /> 
+				<Results results={this.state.results} /> 
 			</div>
 		);
 	}

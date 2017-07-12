@@ -30,8 +30,9 @@ class App extends Component {
 			<div>
 				<h1>Rijksmuseum App</h1> 
 				<br /> 
-				{!topArtworks.length ? <img src="../../style/loading.svg" /> : <Top20Artworks topArtworks={topArtworks} />}
 				<SearchBar />
+				<br /><br />
+				{!topArtworks.length ? <img src="../../style/loading.svg" /> : <Top20Artworks topArtworks={topArtworks} />}
 			</div>
 		);
 	}	
