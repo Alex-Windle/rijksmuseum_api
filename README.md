@@ -10,8 +10,6 @@ Features:
 
 Redux app. 
 
-![alt text](screenshot-complete1.png)
-
 ![alt text](screenshot-complete2.png)
 
 ...refactor in progress.
