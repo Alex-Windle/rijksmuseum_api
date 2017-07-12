@@ -6,10 +6,14 @@ class SearchBar extends Component {
 	constructor(props) {
 		super(props); 
 		this.state = {
-			term: '',
+			term: 'Vermeer',
 			results: [],
 		};
 	} 
+
+	componentWillMount() {
+		this.getResults(this.state.term);
+	}
 
 	renderButtons () {
 		return PopularSearches.map(item => {
