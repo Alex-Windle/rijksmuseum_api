@@ -16,10 +16,6 @@ Redux app.
 
 ...refactor in progress.
 
-![alt text](rijks_screenshot_7_10.png)
-
-...refactor in progress.
-
 ![alt text](rijks_screenshot_7_07.png)
 
 React app. Completed project! Now, refactor for Redux. 
