@@ -1,5 +1,6 @@
 import React, { Component } from 'react'; 
 import PopularSearches from '../data_popular_searches.js';
+import Results from './Results'; 
 
 class SearchBar extends Component {
 	constructor(props) {
@@ -31,6 +32,7 @@ class SearchBar extends Component {
 						onChange={event => this.onInputChange(event.target.value)}
 					/>
 				</p>
+				<Results results={this.state.results} /> 
 				<div className="popular-searches-wrapper">
 					<p>Popular searches</p>
 					<ul className="popular-searches">
