@@ -11,15 +11,13 @@ class SearchBar extends Component {
 		};
 	} 
 
-	// renderButtons () {
-	// 	return PopularSearches.map(item => {
-	// 		return(<li key={item} onClick={this.clickHandler.bind(this)}>{item}</li>);
-	// 	}); 
-	// }
-	// {this.renderButtons()}
+	renderButtons () {
+		return PopularSearches.map(item => {
+			return(<li key={item} onClick={this.buttonHandler.bind(this)}>{item}</li>);
+		}); 
+	}
 
 	render(){
-		console.log('state: ', this.state.results);
 		return (
 			<div>
 				<p>
@@ -35,9 +33,7 @@ class SearchBar extends Component {
 				<div className="popular-searches-wrapper">
 					<p>Popular searches</p>
 					<ul className="popular-searches">
-						<li>...to build after search function is done.</li>
-						<li>Hook up buttons to populate the search field w/ common searches.</li>
-						<li>"Big wooden ships", "horse paintings", "Rembrandt", etc.</li>
+						{this.renderButtons()}
 					</ul>
 				</div>	
 				<br /><br /> 
@@ -54,17 +50,21 @@ class SearchBar extends Component {
 		// pass props up to parent component, which fires 
 		// the action creator for API call 
 		// this.props.onSearchTermChange(keyword); 
+		this.getResults(keyword);
+	}
 
+	buttonHandler(event) {
+		this.setState({term: event.currentTarget.innerHTML});
+		// this.props.onSearchTermChange(event.currentTarget.innerHTML);
+		this.getResults(event.currentTarget.innerHTML);
+	} 
+
+	getResults(keyword) {
 		fetch(`https://www.rijksmuseum.nl/api/en/collection/?key=cbUNdwH5&p=0&ps=5&imgonly=True&q=${keyword}`)
 			.then(resp => resp.json())
 			.then(resp => resp.artObjects)
 			.then(results => this.setState({results: results}));
 	}
-
-	// buttonHandler(event) {
-	// 	this.setState({term: event.currentTarget.innerHTML});
-	// 	this.props.onSearchTermChange(event.currentTarget.innerHTML);
-	// } 
 }
 
 export default SearchBar;
