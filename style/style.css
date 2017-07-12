@@ -29,6 +29,7 @@
     padding-left: 21px;
     padding-right: 21px;
     white-space: nowrap;
+    overflow: hidden;
 }
 .img-wrapper{
 	display: flex; 
@@ -60,12 +61,13 @@ img {
 	color: black;
 }
 .img-wrapper-empty{
-	border: 0.3px solid dimgray;
-	border-radius: 5px;
-	display: flex;
-	flex-direction: row; 
-	justify-content: center;
-	align-items: center;
+    padding-top: 85px;
+    padding-bottom: 85px;
+    border: 0.3px solid dimgray;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 .popular-searches-wrapper{
 	background: #f96a59;
