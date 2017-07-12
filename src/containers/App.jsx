@@ -15,17 +15,9 @@ class App extends Component {
 	componentWillMount() {
 		this.props.getTopArtworks();
 	}
-
-	// const onSearchTermChange = (term) => {
-		// Fire searchByKeyword action creator
-		// The action creator makes the API call
-		// The payload is the artwork detail information 
-		// The payload is saved to the Redux store
-	// }
-
+	
 	render() {
 		const { topArtworks, searchedArtworks, searchByKeyword } = this.props; 
-
 		return (
 			<div>
 				<h1>Rijksmuseum App</h1> 

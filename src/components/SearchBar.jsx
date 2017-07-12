@@ -50,16 +50,12 @@ class SearchBar extends Component {
 		// set state
 		this.setState({term: keyword}); 
 
-		// Capture the search term
-		// pass props up to parent component, which fires 
-		// the action creator for API call 
-		// this.props.onSearchTermChange(keyword); 
+		// fire API call
 		this.getResults(keyword);
 	}
 
 	buttonHandler(event) {
 		this.setState({term: event.target.innerHTML});
-		// this.props.onSearchTermChange(event.currentTarget.innerHTML);
 		this.getResults(event.target.innerHTML);
 	} 
 

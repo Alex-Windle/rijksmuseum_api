@@ -27,13 +27,6 @@ const Results = function(props) {
 			<ul className="artwork-list">{results}</ul>
 		</div>
 	);
-
-	// console.log('Results: ', props.results);
-	// return (
-	// 	<div>
-	// 		Results
-	// 	</div>
-	// );
 }
 
 export default Results;
