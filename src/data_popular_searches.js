@@ -8,14 +8,12 @@ const popular_searches = [
 	'Battle of Waterloo',
 	'Girl in a Blue Dress',
 	'Merry Drinker',
-	'Nativity',
-	'Resurrection',
+	'Dutch porcelain',
+	'Big wooden ships', 
+	'Horse paintings',
 	'Mary and Joseph',
 	'Charles V',
-	'Dutch porcelain',
-	'Birds',
-	'Big wooden ships', 
-	'horse paintings'
+	'Birds'
 ]
 
 export default popular_searches; 
